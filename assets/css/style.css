@@ -1,5 +1,18 @@
-/* Default styles (for large screens) */
-
+*{
+  padding: 0%;
+  margin: 0%;
+}
+body{
+  background-color: grey;
+}
+.navbar{
+  display: flex;
+  background-color: white;
+  width: 97vw;
+  height: 11vh;
+  margin: 3.5vh 1.5vw;
+  align-items: center;
+}
 /* Mobile (≤ 576px) */
 @media screen and (max-width: 576px) {
     body {
