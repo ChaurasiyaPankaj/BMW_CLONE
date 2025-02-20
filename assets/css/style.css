@@ -3,16 +3,66 @@
   margin: 0%;
 }
 body{
-  background-color: grey;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  background-image: url(/assets/images/main_bg.webp);
+  background-size: cover;
 }
 .navbar{
-  display: flex;
+  display: grid;
+  grid-template-columns: 42% 58%;
   background-color: white;
   width: 97vw;
   height: 11vh;
   margin: 3.5vh 1.5vw;
   align-items: center;
+  justify-content: space-between;
 }
+
+.quote{
+  border-left: 1px solid black;
+  padding: 2vh;
+  font-size: large;
+}
+
+.nav_container_1{
+  padding-left: 16%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.nav_container_1 a{
+  padding-right: 3%;
+}
+
+.nav_container_2{
+  padding-right: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav_page, .fa-magnifying-glass{
+  padding:2%;
+  margin: 0% -3%;
+  font-size: 16px;
+  text-decoration:none;
+  color: black;
+  font-weight:500;
+}
+
+.nav_page:hover{
+  color: white;
+  background-color: blue;
+  padding:2%;
+}
+.fa-magnifying-glass:hover{
+  /* color: white; */
+  background-color: blue;
+  padding:2%;
+}
+
 /* Mobile (≤ 576px) */
 @media screen and (max-width: 576px) {
     body {
