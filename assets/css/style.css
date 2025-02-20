@@ -4,18 +4,34 @@
 }
 body{
   font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  overflow-x: hidden;
+}
+
+.main_frame{
   background-image: url(/assets/images/main_bg.webp);
   background-size: cover;
+  display: grid;
+  grid-template-rows: 18vh 24vh 7vh 14vh 18vh;
+  cursor: pointer;
 }
+
+.main_frame:hover{
+  
+}
+
 .navbar{
+  position: fixed;
+  top: 0;
   display: grid;
   grid-template-columns: 42% 58%;
   background-color: white;
-  width: 97vw;
+  width: 96vw;
   height: 11vh;
   margin: 3.5vh 1.5vw;
   align-items: center;
   justify-content: space-between;
+  cursor: default;
+  transition: top 0.3s ease-in-out;
 }
 
 .quote{
@@ -58,11 +74,47 @@ body{
   padding:2%;
 }
 .fa-magnifying-glass:hover{
-  /* color: white; */
   background-color: blue;
   padding:2%;
 }
 
+.main_frame_text1{
+  color: white;
+  font-size: 3.5vh;
+  margin-left: 5%;
+}
+.main_frame_text2 {
+  color: white;
+  font-size: 8vh;
+  font-weight: 600;
+  margin-left: 5%;
+}
+.main_frame_button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6vh;
+  width: 11vw;
+  color: white;
+  border: 2px solid white;
+  margin-left: 5%;
+}
+
+.main_frame_2{
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-rows: 100vh;
+}
+
+.main_frame_2_container{
+  color: black;
+}
+.main_frame_2_container:nth-child(1){
+  background-color: yellow;
+}
+.main_frame_2_container:nth-child(2){
+  background-color: cyan;
+}
 /* Mobile (≤ 576px) */
 @media screen and (max-width: 576px) {
     body {

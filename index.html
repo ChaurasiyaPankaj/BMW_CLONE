@@ -4,24 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW</title>
+    <link rel="icon" type="image/png" href="assets/images/BMW_LOGO.png">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav_container_1">
-            <a href="index.html"><img src="/assets/images/BMW_LOGO.png" alt="logo" height="45vh"></a>
-            <p class="quote">Sheer Driving <strong>Pleasure</strong></p>
+    <div class="main_frame">
+        <div class="empty"></div>
+        <nav class="navbar" id="navbar">
+            <div class="nav_container_1">
+                <a href="index.html"><img src="/assets/images/BMW_LOGO.png" alt="logo" height="45vh"></a>
+                <p class="quote">Sheer Driving <strong>Pleasure</strong></p>
+            </div>
+            <div class="nav_container_2">
+                <a href="#" class="nav_page">Home</a>
+                <a href="#" class="nav_page">Circular World</a>
+                <a href="#" class="nav_page">Digital Journey</a>
+                <a href="#" class="nav_page">Electric Future</a>
+                <a href="#" class="nav_page">Freude</a>
+                <a href="#" class="nav_page">Models</a>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </nav>
+        <div class="empty"></div>
+        <div class="main_frame_text1">
+            <p>BMW explained</p>
         </div>
-        <div class="nav_container_2">
-            <a href="#" class="nav_page">Home</a>
-            <a href="#" class="nav_page">Circular World</a>
-            <a href="#" class="nav_page">Digital Journey</a>
-            <a href="#" class="nav_page">Electric Future</a>
-            <a href="#" class="nav_page">Freude</a>
-            <a href="#" class="nav_page">Models</a>
-            <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="main_frame_text2">
+            <p>The joy of colour</p>
         </div>
-    </nav>
+        <div class="main_frame_button">
+            Read more
+        </div>
+    </div>
+    <div class="main_frame_2">
+        <div class="main_frame_2_container">
+            abc
+        </div>
+        <div class="main_frame_2_container">
+            xyz
+        </div>
+    </div>
+
+
+    <!-- java script -->
+     <script>
+        let prevScrollPos = window.scrollY;
+window.addEventListener("scroll", function () {
+    let currentScrollPos = window.scrollY;
+    let navbar = document.getElementById("navbar");
+
+    if (currentScrollPos > 50) {
+        if (currentScrollPos > prevScrollPos) {
+            navbar.style.top = "-15vh"; 
+        } else {
+            navbar.style.top = "0"; 
+        }
+    }
+    prevScrollPos = currentScrollPos;
+});
+     </script>
 </body>
 </html>
