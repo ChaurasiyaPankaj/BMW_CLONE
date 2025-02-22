@@ -7,18 +7,6 @@ body{
   overflow-x: hidden;
 }
 
-.main_frame{
-  background-image: url(/assets/images/main_bg.webp);
-  background-size: cover;
-  display: grid;
-  grid-template-rows: 18vh 24vh 7vh 14vh 18vh;
-  cursor: pointer;
-}
-
-.main_frame:hover{
-  
-}
-
 .navbar{
   position: fixed;
   top: 0;
@@ -32,6 +20,7 @@ body{
   justify-content: space-between;
   cursor: default;
   transition: top 0.3s ease-in-out;
+  z-index: 1000;
 }
 
 .quote{
@@ -75,19 +64,48 @@ body{
 }
 .fa-magnifying-glass:hover{
   background-color: blue;
+  color: white;
   padding:2%;
+}
+
+.container {
+  position: relative;
+  width: 100vw;  
+  height: 80vh; 
+  overflow: hidden;
+}
+.bg-image{
+  position: absolute;
+  background-image: url(/assets/images/main_bg.webp);
+  background-size: cover;
+  border: transparent;
+  height: 80vh;
+  width: 100vw;
+  transition: transform 3s ease, filter 1.5s ease;
+  cursor: pointer;
+}
+.container:hover .bg-image {
+  transform: scale(1.05);
+  filter: brightness(65%);
+}
+
+.main_frame{
+  position:absolute;
+  top: 70%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
 }
 
 .main_frame_text1{
   color: white;
   font-size: 3.5vh;
-  margin-left: 5%;
 }
 .main_frame_text2 {
   color: white;
   font-size: 8vh;
+  padding-bottom: 4vh;
   font-weight: 600;
-  margin-left: 5%;
 }
 .main_frame_button{
   display: flex;
@@ -97,7 +115,6 @@ body{
   width: 11vw;
   color: white;
   border: 2px solid white;
-  margin-left: 5%;
 }
 
 .main_frame_2{
