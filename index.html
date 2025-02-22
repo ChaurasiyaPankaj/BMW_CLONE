@@ -80,8 +80,116 @@
         
     </div>
 
-    <div class="frame_6">
-        
+    <div class="frame_4">
+        <div class="frame_4_container">
+            <div class="frame_4_content">
+                <p class="frame_4_heading">THE BMW PODCAST:</p>
+                <P class="frame_4_heading">CHANGING LANES</P>
+                <P class="frame_4_sub_heading">Changing Lanes is the official podcast from BMW. In these audio series, we take you with us on new journeys through the BMW universe. Find out more about sustainability, innovation, technology, mobility and the latest trends. You can find and subscribe to Changing Lanes on all major podcast platforms, so tune in!</P>
+                <div class="main_frame_button">
+                Listen now
+                </div>
+            </div>
+        </div>
+        <div class="frame_4_container">
+            <button class="slider_arrow left" onclick="scrollSlider(-1)">&#10094;</button>
+            <div class="slider">
+                <div class="slide">
+                    <div class="frame_4_media">
+                        <video autoplay loop class="background-video">
+                            <source src="/assets/images/frame_4_vid_1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="slide_text">
+                        <i class="fa-solid fa-microphone"></i>
+                        <p class="slide_heading">GAME CHANGER</p>
+                        <p class="slide_sub_heading">An audio series about those who change the world around them</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="frame_4_media">
+                        <video autoplay loop class="background-video">
+                            <source src="/assets/images/frame_4_vid_2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="slide_text">
+                        <i class="fa-solid fa-microphone"></i>
+                        <p class="slide_heading">GAME CHANGER</p>
+                        <p class="slide_sub_heading">An audio series about those who change the world around them</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="frame_4_media">
+                        <video autoplay loop class="background-video">
+                            <source src="/assets/images/frame_4_vid_3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="slide_text">
+                        <i class="fa-solid fa-microphone"></i>
+                        <p class="slide_heading">GAME CHANGER</p>
+                        <p class="slide_sub_heading">An audio series about those who change the world around them</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="frame_4_media">
+                        <video autoplay loop class="background-video">
+                            <source src="/assets/images/frame_4_vid_4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="slide_text">
+                        <i class="fa-solid fa-microphone"></i>
+                        <p class="slide_heading">GAME CHANGER</p>
+                        <p class="slide_sub_heading">An audio series about those who change the world around them</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="frame_4_media">
+                        <video autoplay loop class="background-video">
+                            <source src="/assets/images/frame_4_vid_5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="slide_text">
+                        <i class="fa-solid fa-microphone"></i>
+                        <p class="slide_heading">GAME CHANGER</p>
+                        <p class="slide_sub_heading">An audio series about those who change the world around them</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="frame_4_media">
+                        <video autoplay loop class="background-video">
+                            <source src="/assets/images/frame_4_vid_6.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="slide_text">
+                        <i class="fa-solid fa-microphone"></i>
+                        <p class="slide_heading">GAME CHANGER</p>
+                        <p class="slide_sub_heading">An audio series about those who change the world around them</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="frame_4_media">
+                        <video autoplay loop class="background-video">
+                            <source src="/assets/images/frame_4_vid_7.mp4">
+                        </video>
+                    </div>
+                    <div class="slide_text">
+                        <i class="fa-solid fa-microphone"></i>
+                        <p class="slide_heading">GAME CHANGER</p>
+                        <p class="slide_sub_heading">An audio series about those who change the world around them</p>
+                    </div>
+                </div>
+            </div>
+            <button class="slider_arrow right" onclick="scrollSlider(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <div class="content_frame">
+        <div class="heading">
+            <p>ALL BMW MODELS</p>
+        </div> 
+        <div class="sub-heading">
+            <a href=""><i class="fa-solid fa-greater-than"></i>Find your BMW</a>
+        </div>       
     </div>
 
     <div class="frame_5">
@@ -426,19 +534,44 @@
     <!-- java script -->
      <script>
         let prevScrollPos = window.scrollY;
-window.addEventListener("scroll", function () {
-    let currentScrollPos = window.scrollY;
-    let navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", function () {
+            let currentScrollPos = window.scrollY;
+            let navbar = document.getElementById("navbar");
 
-    if (currentScrollPos > 50) {
-        if (currentScrollPos > prevScrollPos) {
-            navbar.style.top = "-15vh"; 
-        } else {
-            navbar.style.top = "0"; 
+            if (currentScrollPos > 50) {
+                if (currentScrollPos > prevScrollPos) {
+                    navbar.style.top = "-15vh"; 
+                } else {
+                    navbar.style.top = "0"; 
+                }
+            }
+            prevScrollPos = currentScrollPos;
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const slider = document.querySelector(".slider");
+            let scrollAmount = 0;
+            let step = 250;
+            let maxScroll = slider.scrollWidth - slider.clientWidth;
+
+            function autoScroll() {
+                if (scrollAmount >= maxScroll) {
+                    slider.scrollTo({ left: 0, behavior: "smooth" });
+                    scrollAmount = 0;
+                } else {
+                    slider.scrollBy({ left: step, behavior: "smooth" });
+                    scrollAmount += step;
+                }
+            }
+
+            setInterval(autoScroll, 3000);
+        });
+
+        function scrollSlider(direction) {
+            const slider = document.querySelector(".slider");
+            const step = 300; // Scroll step size
+            slider.scrollBy({ left: direction * step, behavior: "smooth" });
         }
-    }
-    prevScrollPos = currentScrollPos;
-});
      </script>
 </body>
 </html>

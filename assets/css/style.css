@@ -228,13 +228,146 @@ a{
 
 
 
-.frame_3{
+
+.frame_4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 84vh;
+  background-color: #262626;
+}
+
+.frame_4_container:nth-child(1){
+  width: 30vw;
+  height: 100%;
+}
+
+.frame_4_container:nth-child(2){
+  width: 70vw;
+  height: 100%;
+}
+
+.frame_4_content{
+  margin-left: 5vw;
+  margin-top: 4vh;
+  margin-right:2vw ;
+}
+
+.frame_4_heading{
+  color: white;
+  font-size: 6vh;
+  font-weight: 500;
+  margin-top: -1vh;
 
 }
 
+.frame_4_sub_heading{
+  color: white;
+  font-size: 2.5vh;
+  margin-bottom: 4vh;
+}
 
-.frame4{
+.frame_4_container:nth-child(2) {
+  width: 70vw;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
 
+.slider {
+  display: flex;
+  gap: 1vw;
+  width: 100%;
+  height: 60%;
+  margin-top:-25vh ;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slide {
+  min-width: 17vw;
+  max-width: 17vw;
+  height: 100%;
+  overflow: hidden;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* transition: transform 5s ease-out, filter 1.5s ease; */
+  z-index: 0;
+}
+
+.slide:hover:hover .frame_4_media{
+  transform: scale(1.05);
+  overflow: hidden;
+  filter: brightness(65%);
+  transform-origin: center;
+}
+
+.slide_text {
+  position: absolute;
+  font-size: 2vh;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.slider_arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-200%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 3vh;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.3s;
+}
+
+.slider_arrow:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.left {
+  left: 1vw;
+}
+
+.right {
+  right: 1vw;
+}
+
+.content_frame{
+  height: 33vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "BMW Type Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.heading{
+  font-size: 8vh;
+  font-weight: 100px;
+}
+
+.sub-heading{
+  font-size: 2.5vh;
+  font-weight: 600;
+  margin: 5vh;
+}
+
+.sub-heading i{
+  padding-right: 1vw;
 }
 
 .frame_5_container{
