@@ -76,9 +76,39 @@
        </div>
     </a>
 
-    <div class="frame_3">
-        
-    </div>
+    <section class="frame_2-section">
+        <div class="frame_2-content">
+            <div class="frame_2-text">
+                <h2>Learn everything about BMW here</h2>
+                <p> <span class="frame_2-arrow">></span><strong>BMW NEWS</strong></p>
+            </div>
+            <div class="frame_2-slider">
+                <div class="frame_2-slider-container">
+                    <div class="frame_2-slider-track">
+                        <img src="/assets/images/frame_3_group1_1.webp" alt="BMW Exterior">
+                        <img src="/assets/images/frame_3_group1_2.webp" alt="BMW Interior">
+                        <img src="/assets/images/frame_3_group1_3.webp" alt="BMW Dashboard">
+                    </div>
+                    <button class="frame_2-prev" onclick="frame_2_moveSlide(-1)">&#10094;</button>
+                    <button class="frame_2-next" onclick="frame_2_moveSlide(1)">&#10095;</button>
+                </div>
+                <p class="frame_2-slide-number"><span id="frame_2-currentSlide">1</span> / 3</p>
+            </div>
+        </div>
+
+        <div class="frame_2-content">
+            <div class="frame_2-video">
+                <video autoplay loop muted>
+                    <source src="/assets/images/frame_3_vid.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="frame_2-text">
+                <h2>Become a BMW expert</h2>
+                <p> <span class="frame_2-arrow">›</span> <strong>BMW EXPLAINED</strong></p>
+            </div>
+        </div>
+    </section>
+
 
     <div class="frame_4">
         <div class="frame_4_container">
@@ -597,62 +627,10 @@
 
     <!-- java script -->
      <script>
-        let prevScrollPos = window.scrollY;
-        window.addEventListener("scroll", function () {
-            let currentScrollPos = window.scrollY;
-            let navbar = document.getElementById("navbar");
-
-            if (currentScrollPos > 50) {
-                if (currentScrollPos > prevScrollPos) {
-                    navbar.style.top = "-15vh"; 
-                } else {
-                    navbar.style.top = "0"; 
-                }
-            }
-            prevScrollPos = currentScrollPos;
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const slider = document.querySelector(".slider");
-            const slides = Array.from(slider.children);
-            const slideWidth = slides[0].offsetWidth + 10; // Add gap/margin if any
-
-            // Duplicate slides for seamless infinite effect
-            slides.forEach(slide => {
-                let clone = slide.cloneNode(true);
-                slider.appendChild(clone);
-            });
-
-            let autoScrollInterval;
-
-            function startAutoScroll() {
-                autoScrollInterval = setInterval(() => {
-                    slider.scrollBy({ left: slideWidth, behavior: "smooth" });
-
-                    if (slider.scrollLeft >= (slideWidth * slides.length)) {
-                        setTimeout(() => {
-                            slider.scrollTo({ left: 0, behavior: "instant" });
-                        }, 500);
-                    }
-                }, 3000);
-            }
-
-            function scrollSlider(direction) {
-                clearInterval(autoScrollInterval); // Pause auto scroll
-                slider.scrollBy({ left: direction * slideWidth, behavior: "smooth" });
-
-                if (slider.scrollLeft >= (slideWidth * slides.length)) {
-                    setTimeout(() => {
-                        slider.scrollTo({ left: 0, behavior: "instant" });
-                    }, 500);
-                }
-                startAutoScroll(); // Restart auto scroll after manual action
-            }
-
-            startAutoScroll();
-        });
-
+        
+        
 
      </script>
+     <script src="/assets/js/script.js"></script>
 </body>
 </html>
