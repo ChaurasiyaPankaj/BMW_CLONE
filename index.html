@@ -550,28 +550,45 @@
 
         document.addEventListener("DOMContentLoaded", function () {
             const slider = document.querySelector(".slider");
-            let scrollAmount = 0;
-            let step = 250;
-            let maxScroll = slider.scrollWidth - slider.clientWidth;
+            const slides = Array.from(slider.children);
+            const slideWidth = slides[0].offsetWidth + 10; // Add gap/margin if any
 
-            function autoScroll() {
-                if (scrollAmount >= maxScroll) {
-                    slider.scrollTo({ left: 0, behavior: "smooth" });
-                    scrollAmount = 0;
-                } else {
-                    slider.scrollBy({ left: step, behavior: "smooth" });
-                    scrollAmount += step;
-                }
+            // Duplicate slides for seamless infinite effect
+            slides.forEach(slide => {
+                let clone = slide.cloneNode(true);
+                slider.appendChild(clone);
+            });
+
+            let autoScrollInterval;
+
+            function startAutoScroll() {
+                autoScrollInterval = setInterval(() => {
+                    slider.scrollBy({ left: slideWidth, behavior: "smooth" });
+
+                    if (slider.scrollLeft >= (slideWidth * slides.length)) {
+                        setTimeout(() => {
+                            slider.scrollTo({ left: 0, behavior: "instant" });
+                        }, 500);
+                    }
+                }, 3000);
             }
 
-            setInterval(autoScroll, 3000);
+            function scrollSlider(direction) {
+                clearInterval(autoScrollInterval); // Pause auto scroll
+                slider.scrollBy({ left: direction * slideWidth, behavior: "smooth" });
+
+                if (slider.scrollLeft >= (slideWidth * slides.length)) {
+                    setTimeout(() => {
+                        slider.scrollTo({ left: 0, behavior: "instant" });
+                    }, 500);
+                }
+                startAutoScroll(); // Restart auto scroll after manual action
+            }
+
+            startAutoScroll();
         });
 
-        function scrollSlider(direction) {
-            const slider = document.querySelector(".slider");
-            const step = 300; // Scroll step size
-            slider.scrollBy({ left: direction * step, behavior: "smooth" });
-        }
+
      </script>
 </body>
 </html>
